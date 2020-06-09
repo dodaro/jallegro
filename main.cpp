@@ -56,10 +56,12 @@ void game(int** mainMatrix, int** auxMatrix) {
                 auxMatrix[i][j] = analyzeMatrix(i, j, mainMatrix);
             }
         }
-        //Swap mainMatrix and auxMatrix
-        int** tmp = mainMatrix;
-        mainMatrix = auxMatrix;
-        auxMatrix = tmp;
+        
+        for(int i = 0; i < dim; ++i) {
+            for(int j = 0; j < dim; ++j) {
+                mainMatrix[i][j] = auxMatrix[i][j];
+            }
+        }
     }
 }
 
